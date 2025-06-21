@@ -1,0 +1,41 @@
+# Project Architecture Design
+
+## Overview
+This project is a professional, modular, and testable ASP.NET Web API for eCommerce, following best practices:
+- **CQRS** and **MediatR** for command/query separation
+- **Repository Pattern** for data access abstraction
+- **Dependency Injection** with Autofac
+- **API Versioning** and **Swagger** for documentation
+- **Serilog** for logging
+- **Unit and Integration Tests**
+
+## Layers
+- **Controllers**: API endpoints, versioned, thin, delegate to MediatR
+- **Handlers**: MediatR command/query handlers, business logic
+- **DTOs**: Data transfer objects for API contracts
+- **Entities**: Database models
+- **Repository**: Data access, implements interfaces
+- **Data**: EF Core DbContext
+- **Middleware**: Custom authentication, logging, error handling
+- **Configurations**: DI, AutoMapper, Swagger, etc.
+- **Extensions**: Service and host extensions
+
+## Exception Handling
+- All repository and handler methods use try/catch with logging
+- Global error handling middleware can be added for API-wide exception management
+
+## Best Practices
+- Null checks and defensive coding
+- Async/await for all I/O
+- Logging at all critical operations
+- Unit and integration tests for all business logic
+- Separation of concerns and single responsibility
+
+## Improvements for Ownership
+- Update namespaces and copyright
+- Add/replace author and company info
+- Review and refactor for code style and comments
+- Ensure all dependencies are up-to-date
+
+---
+*This file is auto-generated to document the architecture and best practices of your eCommerceWebAPI project.*
